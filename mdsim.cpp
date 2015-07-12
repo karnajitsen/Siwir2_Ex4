@@ -43,8 +43,7 @@ void getCellNumber(Real x, Real y, Real z, size_t& i, size_t& j, size_t& k)
 void inline init()
 {
 	grd = new Grid( xsize , ysize , zsize);
-	tgrd = new Grid(xsize, ysize, zsize);
-	
+		
 	ifstream blocks;
 	blocks.open("blocks-small.dat");
 	Real a, b, c, d, e, f, g;
@@ -414,7 +413,7 @@ int main(int argc, char** argv)
 	
 	cout << "sigma= 2222222222" << sigma << std::endl;
 	init();
-	cout << "sigma= 3333333333333" << sigma << std::endl;
+	
 	performTimeSteps();
 
 
