@@ -6,7 +6,7 @@
 #define DIM 3
 typedef double Real;
 
-typedef struct {
+typedef struct Particle{
 	Real m;
 	Real x[DIM];
 	Real v[DIM];
