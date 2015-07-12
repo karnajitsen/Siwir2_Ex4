@@ -6,7 +6,7 @@
 #define DIM 3
 typedef double Real;
 
-typedef struct Particle{
+typedef struct Part{
 	Real m;
 	Real x[DIM];
 	Real v[DIM];
@@ -14,7 +14,7 @@ typedef struct Particle{
 	Real FOld[DIM];
 }Particle;
 
-typedef struct ParticleNode{
+typedef struct PartNode{
 	Particle p;
 	struct ParticleNode * next;
 }ParticleNode;
