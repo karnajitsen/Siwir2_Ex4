@@ -398,7 +398,22 @@ int main(int argc, char** argv)
 	xsize = (size_t)ceil((x_max - x_min) / r_cut);
 	ysize = (size_t)ceil((y_max - y_min) / r_cut);
 	zsize = (size_t)ceil((z_max - z_min) / r_cut);
+	cout << "vis_space= " << vis_space << std::endl;
+	cout << "t_start= " << t_start << std::endl;
+	cout << "t_end= " << t_end << std::endl;
+	cout << "delta_t= " << delta_t << std::endl;
+	cout << "x_min= " << x_min << std::endl;
+	cout << "y_min= " << y_min << std::endl;
+	cout << "z_min= " << z_min << std::endl;
+	cout << "x_max= " << x_max << std::endl;
+	cout << "y_max= " << y_max << std::endl;
+	cout << "z_max= " << z_max << std::endl;
+	cout << "r_cut= " << r_cut << std::endl;
+	cout << "epsilon= " << epsilon << std::endl;
+	cout << "sigma= " << sigma << std::endl;
+	
 	init();
 	performTimeSteps();
+
 
 }
