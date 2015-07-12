@@ -137,7 +137,7 @@ class Cell {
 
 	void addParticle(Particle p)
 	{
-		ParticleNode* pn=nullptr;
+		ParticleNode* pn= new ParticleNode();
 		pn->p = p;
 		pn->next = header;
 		header = pn;
