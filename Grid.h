@@ -21,7 +21,7 @@ public:
 		ysize = y;
 		zsize = z;
 		data = new Cell[x * y * z];
-		cout << "sigma= 3333333333333"  << std::endl;
+		//cout << "sigma= 3333333333333"  << std::endl;
 		for (size_t i = 0; i < y; i++)
 		{
 			for (size_t j = 0; j < x; j++)
@@ -30,7 +30,7 @@ public:
 				data[i*x + j + x*y*(z-1)].setZBoundary('U');
 			}
 		}
-		cout << "sigma= 3333333333333"  << std::endl;
+		//cout << "sigma= 3333333333333"  << std::endl;
 		for (size_t i = 0; i < z; i++)
 		{
 			for (size_t j = 0; j < y; j++)
@@ -39,7 +39,7 @@ public:
 				data[i*x*y + j*x + x-1].setXBoundary('E');
 			}
 		}
-		cout << "sigma= 3333333333333"  << std::endl;
+		//cout << "sigma= 3333333333333"  << std::endl;
 		for (size_t i = 0; i < z; i++)
 		{
 			for (size_t j = 0; j < x; j++)
@@ -48,7 +48,7 @@ public:
 				data[i*x*y + (y - 1)*x +j].setYBoundary('N');
 			}
 		}
-		cout << "sigma= 3333333333333" << std::endl;
+		//cout << "sigma= 3333333333333" << std::endl;
 	}
 
 	~Grid()
