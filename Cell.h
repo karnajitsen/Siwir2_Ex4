@@ -182,7 +182,7 @@ class Cell {
 				pnp->next = pn->next;
 				delete pn;
 				length--;
-				return true;
+				break;
 			}
 			else
 			{
@@ -192,6 +192,8 @@ class Cell {
 		}
 		if (i == length)
 			return false;
+
+		return true;
 	}
 
 	bool insertAfter(ParticleNode *sp, ParticleNode *tp)
