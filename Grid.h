@@ -48,6 +48,7 @@ public:
 				data[i*x*y + (y - 1)*x +j].setYBoundary('N');
 			}
 		}
+		cout << "sigma= 3333333333333" << std::endl;
 	}
 
 	~Grid()
