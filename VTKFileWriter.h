@@ -1,6 +1,5 @@
 #include<iostream>
 #include<fstream>
-#include "Grid.h"
 using namespace std;
 
 inline void writeVTK(string filename, Grid *grd)

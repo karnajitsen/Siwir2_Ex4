@@ -5,8 +5,9 @@
 #include<stdlib.h>
 
 #include "FileReader.h"
-#include "VTKFileWriter.h"
 #include "Grid.h"
+#include "VTKFileWriter.h"
+
 
 #define DIM 3
 typedef double Real;
