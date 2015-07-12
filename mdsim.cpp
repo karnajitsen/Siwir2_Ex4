@@ -372,10 +372,9 @@ int main(int argc, char** argv)
 
 	string fname = argv[1];
 	ifstream paramfile;
-	string tmp;
-	string vtkfilename;
-	size_t vtk_step;
-
+	//string tmp;
+	//string vtkfilename;
+	
 	FileReader* fr = new FileReader();
 
 	fr->readParameters(fname);

@@ -1,5 +1,6 @@
 #include <iostream>
 #include<fstream>
+#include<assert.h>
 #include<cmath>
 #include<memory>
 #include<stdlib.h>
@@ -73,6 +74,7 @@ class Cell {
 		assert(i < length);
 		ParticleNode * p = header;
 		size_t j;
+		Particle pr;
 		for (j = 0; j < length; j++)
 		{
 			if (j == i && (p->p.x[0] != cp.x[0] || p->p.x[1] != cp.x[1] || p->p.x[2] != cp.x[2]))
@@ -82,12 +84,14 @@ class Cell {
 			else
 				p = p->next;
 		}
+		return pr;
 	}
 
 	inline Particle& operator()(size_t i, Particle cp) const
 	{
 		assert(i < length);
 		ParticleNode * p = header;
+		Particle pr;
 		size_t j;
 		for (j = 0; j < length; j++)
 		{
@@ -98,6 +102,7 @@ class Cell {
 			else
 				p = p->next;
 		}
+		return pr;
 	}
 
 	inline Particle& operator()(size_t i)
@@ -105,13 +110,17 @@ class Cell {
 		assert(i < length);
 		ParticleNode * p = header;
 		size_t j;
+		Particle pl;
 		for ( j = 0; j < length; j++)
 		{
 			if (j == i)
-				return p->p;
+			{
+				return p->p; 
+			}
 			else
 				p = p->next;
-		}		
+		}
+		return pl;
 	}
 
 	inline Particle& operator()(size_t i) const
@@ -119,6 +128,7 @@ class Cell {
 		assert(i < length);
 		ParticleNode * p = header;
 		size_t j;
+		Particle pr;
 		for (j = 0; j < length; j++)
 		{
 			if (j == i)
@@ -126,11 +136,12 @@ class Cell {
 			else
 				p = p->next;
 		}
+		return pr;
 	}
 
 	void addParticle(Particle p)
 	{
-		ParticleNode* pn;
+		ParticleNode* pn=nullptr;
 		pn->p = p;
 		pn->next = header;
 		header = pn;
