@@ -412,7 +412,9 @@ int main(int argc, char** argv)
 	cout << "epsilon= " << epsilon << std::endl;
 	cout << "sigma= " << sigma << std::endl;
 	
+	cout << "sigma= 2222222222" << sigma << std::endl;
 	init();
+	cout << "sigma= 3333333333333" << sigma << std::endl;
 	performTimeSteps();
 
 
