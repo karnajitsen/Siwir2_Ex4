@@ -53,6 +53,7 @@ void inline init()
 	{
 		Particle p;
 		p.m = a;
+		cout << "sigma= 44444" << std::endl;
 		p.x[0] = b;
 		p.x[1] = c;
 		p.x[2] = d;
@@ -62,6 +63,7 @@ void inline init()
 		p.F[0] = 0.0;
 		p.F[1] = 0.0;
 		p.F[2] = 0.0;
+		cout << "sigma= 44444" << std::endl;
 		getCellNumber(b, c, d, i, j, k);
 		(*grd)(i, j, k).addParticle(p);
 		cout << "sigma= 44444" << std::endl;
