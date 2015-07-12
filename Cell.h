@@ -72,7 +72,7 @@ class Cell {
 	{
 		assert(i < length);
 		ParticleNode * p = header;
-		int j;
+		size_t j;
 		for (j = 0; j < length; j++)
 		{
 			if (j == i && (p->p.x[0] != cp.x[0] || p->p.x[1] != cp.x[1] || p->p.x[2] != cp.x[2]))
@@ -88,7 +88,7 @@ class Cell {
 	{
 		assert(i < length);
 		ParticleNode * p = header;
-		int j;
+		size_t j;
 		for (j = 0; j < length; j++)
 		{
 			if (j == i && (p->p.x[0] != cp.x[0] || p->p.x[1] != cp.x[1] || p->p.x[2] != cp.x[2]))
@@ -104,7 +104,7 @@ class Cell {
 	{
 		assert(i < length);
 		ParticleNode * p = header;
-		int j;
+		size_t j;
 		for ( j = 0; j < length; j++)
 		{
 			if (j == i)
@@ -118,7 +118,7 @@ class Cell {
 	{
 		assert(i < length);
 		ParticleNode * p = header;
-		int j;
+		size_t j;
 		for (j = 0; j < length; j++)
 		{
 			if (j == i)
@@ -141,7 +141,7 @@ class Cell {
 	{
 		ParticleNode* pn = header;
 		ParticleNode* pnp = header;
-		int i;
+		size_t i;
 		for ( i = 0; i < length; i++)
 		{
 			if (pn == p)
@@ -165,7 +165,7 @@ class Cell {
 	{
 		ParticleNode* pn = header;
 		ParticleNode* pnp = header;
-		int i;
+		size_t i;
 		for (i = 0; i < length; i++)
 		{
 			if (i == p)
@@ -188,7 +188,7 @@ class Cell {
 	bool insertAfter(ParticleNode *sp, ParticleNode *tp)
 	{
 		ParticleNode* pn = header;
-		int i;
+		size_t i;
 		for (i = 0; i < length; i++)
 		{
 			if (pn == sp)

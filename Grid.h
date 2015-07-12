@@ -22,27 +22,27 @@ public:
 		zsize = z;
 		data = new Cell[x * y * z];
 
-		for (int i = 0; i < y; i++)
+		for (size_t i = 0; i < y; i++)
 		{
-			for (int j = 0; j < x; j++)
+			for (size_t j = 0; j < x; j++)
 			{
 				data[i*x + j].setZBoundary('D');
 				data[i*x + j + x*y*(z-1)].setZBoundary('U');
 			}
 		}
 
-		for (int i = 0; i < z; i++)
+		for (size_t i = 0; i < z; i++)
 		{
-			for (int j = 0; j < y; j++)
+			for (size_t j = 0; j < y; j++)
 			{
 				data[i*x*y + j*x].setXBoundary('W');
 				data[i*x*y + j*x + x-1].setXBoundary('E');
 			}
 		}
 
-		for (int i = 0; i < z; i++)
+		for (size_t i = 0; i < z; i++)
 		{
-			for (int j = 0; j < x; j++)
+			for (size_t j = 0; j < x; j++)
 			{
 				data[i*x*y + j].setYBoundary('S');
 				data[i*x*y + (y - 1)*x +j].setYBoundary('N');
