@@ -113,7 +113,6 @@ inline void compForceBetCells(size_t z, size_t y, size_t x, size_t nz, size_t ny
 
 inline void compForceUpCells(size_t z, size_t y, size_t x, size_t p)
 {
-	size_t len = (*grd)(z, y, x).getLength();
 	size_t uz, ex, wx, sy, ny;
 	if ((*grd)(z, y, x).getZBoundary() == 'U')
 		uz = 0;
@@ -154,7 +153,6 @@ inline void compForceUpCells(size_t z, size_t y, size_t x, size_t p)
 
 inline void compForceDownCells(size_t z, size_t y, size_t x, size_t p)
 {
-	size_t len = (*grd)(z, y, x).getLength();
 	size_t uz, ex, wx, sy, ny;
 	if ((*grd)(z, y, x).getZBoundary() == 'D')
 		uz = zsize -1;
@@ -195,7 +193,6 @@ inline void compForceDownCells(size_t z, size_t y, size_t x, size_t p)
 
 inline void compForceEastCells(size_t z, size_t y, size_t x, size_t p)
 {
-	size_t len = (*grd)(z, y, x).getLength();
 	size_t  ex, sy, ny;
 	
 	if ((*grd)(z, y, x).getXBoundary() == 'E')
@@ -222,7 +219,6 @@ inline void compForceEastCells(size_t z, size_t y, size_t x, size_t p)
 
 inline void compForceWestCells(size_t z, size_t y, size_t x, size_t p)
 {
-	size_t len = (*grd)(z, y, x).getLength();
 	size_t  wx, sy, ny;
 	
 	if ((*grd)(z, y, x).getXBoundary() == 'W')
@@ -249,7 +245,6 @@ inline void compForceWestCells(size_t z, size_t y, size_t x, size_t p)
 
 inline void compForceSouthCells(size_t z, size_t y, size_t x, size_t p)
 {
-	size_t len = (*grd)(z, y, x).getLength();
 	size_t  sy;
 
 	if ((*grd)(z, y, x).getYBoundary() == 'S')
@@ -263,7 +258,6 @@ inline void compForceSouthCells(size_t z, size_t y, size_t x, size_t p)
 
 inline void compForceNorthCells(size_t z, size_t y, size_t x, size_t p)
 {
-	size_t len = (*grd)(z, y, x).getLength();
 	size_t  ny;
 
 	if ((*grd)(z, y, x).getYBoundary() == 'N')
