@@ -32,7 +32,7 @@ class Cell {
 		length = 0;
 		xbndy = 'C';
 		ybndy = 'C';
-		zbndy = 'C';
+		zbndy = 'C';		
 	}
 
 	inline void setXBoundary(char c)
@@ -74,35 +74,33 @@ class Cell {
 		assert(i < length);
 		ParticleNode * p = header;
 		size_t j;
-		Particle pr;
 		for (j = 0; j < length; j++)
 		{
 			if (j == i && (p->p.x[0] != cp.x[0] || p->p.x[1] != cp.x[1] || p->p.x[2] != cp.x[2]))
-				return p->p;
+				break;
 			else if (j == i)
 				return p->next->p;
 			else
 				p = p->next;
 		}
-		return pr;
+		return p->p;
 	}
 
 	inline Particle& operator()(size_t i, Particle cp) const
 	{
 		assert(i < length);
 		ParticleNode * p = header;
-		Particle pr;
 		size_t j;
 		for (j = 0; j < length; j++)
 		{
 			if (j == i && (p->p.x[0] != cp.x[0] || p->p.x[1] != cp.x[1] || p->p.x[2] != cp.x[2]))
-				return p->p;
+				break;
 			else if (j == i)
 				return p->next->p;
 			else
 				p = p->next;
 		}
-		return pr;
+		return p->p;
 	}
 
 	inline Particle& operator()(size_t i)
@@ -110,17 +108,16 @@ class Cell {
 		assert(i < length);
 		ParticleNode * p = header;
 		size_t j;
-		Particle pl;
 		for ( j = 0; j < length; j++)
 		{
 			if (j == i)
 			{
-				return p->p; 
+				break; 
 			}
 			else
 				p = p->next;
 		}
-		return pl;
+		return p->p;
 	}
 
 	inline Particle& operator()(size_t i) const
@@ -128,15 +125,14 @@ class Cell {
 		assert(i < length);
 		ParticleNode * p = header;
 		size_t j;
-		Particle pr;
 		for (j = 0; j < length; j++)
 		{
 			if (j == i)
-				return p->p;
+				break;
 			else
 				p = p->next;
 		}
-		return pr;
+		return p->p;
 	}
 
 	void addParticle(Particle p)
@@ -160,7 +156,7 @@ class Cell {
 				pnp->next = pn->next;
 				delete p;
 				length--;
-				return true;
+				break;
 			}
 			else
 			{
@@ -170,6 +166,8 @@ class Cell {
 		}
 		if (i == length)
 			return false;
+
+		return true;
 	}
 
 	bool removeParticle(size_t p)
