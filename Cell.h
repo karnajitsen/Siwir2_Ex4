@@ -68,7 +68,7 @@ class Cell {
 	{
 		return length;
 	}
-	inline Particle& operator()(size_t i, , Particle cp)
+	inline Particle& operator()(size_t i, Particle cp)
 	{
 		assert(i < length);
 		ParticleNode * p = header;

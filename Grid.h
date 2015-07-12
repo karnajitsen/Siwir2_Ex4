@@ -5,7 +5,6 @@
 #include <memory>
 #include <string.h>
 #include<malloc.h>
-
 #include "Cell.h"
 
 class Grid{
