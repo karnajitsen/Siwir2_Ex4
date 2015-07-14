@@ -92,7 +92,7 @@ inline void compForceCenterCell(size_t z, size_t y, size_t x, size_t p)
 			s = s * s * s;
 			f = 24.0 * epsilon * s * (1.0 - 2.0 * s) / rij2;
 			for (size_t d = 0; d < DIM; d++)
-				(*grd)(z, y, x)(i).F[d] += f * ((*grd)(z, y, x)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
+				(*grd)(z, y, x)(p).F[d] += f * ((*grd)(z, y, x)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
 		}
 	}
 }
@@ -112,7 +112,7 @@ inline void compForceBetCells(size_t z, size_t y, size_t x, size_t nz, size_t ny
 		s = s * s * s;
 		f = 24.0 * epsilon * s * (1.0 - 2.0 * s) / rij2;
 		for (size_t d = 0; d < DIM; d++)
-			(*grd)(z, y, x)(i).F[d] += f * ((*grd)(nz, ny, nx)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
+			(*grd)(z, y, x)(p).F[d] += f * ((*grd)(nz, ny, nx)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
 	}
 }
 
