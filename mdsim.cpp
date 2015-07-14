@@ -113,8 +113,11 @@ inline void compForceBetCells(size_t x, size_t y, size_t z, size_t nx, size_t ny
 		f = 24.0 * epsilon * s * (1.0 - 2.0 * s) / rij2;
 		for (size_t d = 0; d < DIM; d++)
 			(*grd)(z, y, x)(p).F[d] += f * ((*grd)(nz, ny, nx)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
-			if (x == 52 && y == 49 && z == 51)
-				cout << "rij= " << rij2;
+		if (x == 52 && y == 49 && z == 51)
+		{
+			cout << "rij= " << rij2;
+			cout << (*grd)(z, y, x)(p).F[0] << " " << (*grd)(z, y, x)(p).F[1] << " " << (*grd)(z, y, x)(p).F[2] << std::endl;
+		}
 	}
 }
 
@@ -300,12 +303,12 @@ inline void compForce()
 					compForceNorthCells(i, j, k, p);
 					compForceEastCells(i, j, k, p);
 					compForceWestCells(i, j, k, p);
-					cout << k << " " << j << " f " << i << std::endl;
-					cout << (*grd)(i, j, k)(p).F[0] << " " << (*grd)(i, j, k)(p).F[1] << " " << (*grd)(i, j, k)(p).F[2] << std::endl;
+					//cout << k << " " << j << " f " << i << std::endl;
+					//cout << (*grd)(i, j, k)(p).F[0] << " " << (*grd)(i, j, k)(p).F[1] << " " << (*grd)(i, j, k)(p).F[2] << std::endl;
 				}
 			}
 		}
-		cout << xsize << " " << ysize << " " << zsize << std::endl;
+		//cout << xsize << " " << ysize << " " << zsize << std::endl;
 	}
 }
 
