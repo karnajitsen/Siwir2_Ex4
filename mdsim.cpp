@@ -291,7 +291,7 @@ inline void compForce()
 					(*grd)(i, j, k)(p).FOld[1] = (*grd)(i, j, k)(p).F[1];
 					(*grd)(i, j, k)(p).FOld[2] = (*grd)(i, j, k)(p).F[2];
 
-					compForceCenterCell(i, j, k,p);
+					compForceCenterCell(k, j, i,p);
 					compForceUpCells(i, j, k,p);
 					compForceDownCells(i, j, k, p);
 					compForceSouthCells(i, j, k, p);
