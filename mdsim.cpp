@@ -65,7 +65,7 @@ void inline init()
 		p.F[2] = 0.0;
 		//cout << "sigma= 44444" << std::endl;
 		getCellNumber(b, c, d, i, j, k);
-		(*grd)(i, j, k).addParticle(p);
+		(*grd)(k, j, i).addParticle(p);
 		//cout << "sigma= 44444" << std::endl;
 
 	}	
