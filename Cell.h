@@ -154,7 +154,7 @@ class Cell {
 			if (pn == p)
 			{
 				pnp->next = pn->next;
-				delete p;
+				free(p);
 				length--;
 				break;
 			}
@@ -180,7 +180,7 @@ class Cell {
 			if (i == p)
 			{
 				pnp->next = pn->next;
-				delete pn;
+				free(pn);
 				length--;
 				break;
 			}

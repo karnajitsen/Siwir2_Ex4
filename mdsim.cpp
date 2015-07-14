@@ -79,7 +79,7 @@ inline Real compRij2(Particle a, Particle b)
 inline void compForceCenterCell(size_t x, size_t y, size_t z, size_t p)
 {
 	size_t len = (*grd)(z, y, x).getLength();
-	cout << "compForceCenterCell()" << std::endl;
+	//cout << "compForceCenterCell()" << std::endl;
 	//Particle np;
 	Real f,s;
 	double rij2 = 0.0;
@@ -100,7 +100,7 @@ inline void compForceCenterCell(size_t x, size_t y, size_t z, size_t p)
 inline void compForceBetCells(size_t x, size_t y, size_t z, size_t nx, size_t ny, size_t nz,size_t p)
 {
 	size_t len = (*grd)(nz,ny, nx).getLength();
-	cout << "compForceBetCells()" << std::endl;
+	//cout << "compForceBetCells()" << std::endl;
 	Real f, s;
 	double rij2 = 0.0;
 	for (size_t i = 0; i < len; i++)
@@ -276,7 +276,7 @@ inline void compForceNorthCells(size_t z, size_t y, size_t x, size_t p)
 
 inline void compForce()
 {
-	cout << "compForce()" << std::endl;
+	//cout << "compForce()" << std::endl;
 	for (size_t i = 0; i < zsize; i++)
 	{
 		for (size_t j = 0; j < ysize; j++)
@@ -306,7 +306,7 @@ inline void compForce()
 
 inline void compPosition()
 {
-	cout << "compPosition()" << std::endl;
+	//cout << "compPosition()" << std::endl;
 	size_t a, b, c;
 	for (size_t i = 0; i < zsize; i++)
 	{
@@ -323,7 +323,8 @@ inline void compPosition()
 					getCellNumber((*grd)(i, j, k)(p).x[0], (*grd)(i, j, k)(p).x[1], (*grd)(i, j, k)(p).x[2], a, b, c);
 					if (a != k || b != j || c != i)
 					{
-						//(*grd)(c, b, a).addParticle((*grd)(i, j, k)(p));
+						cout << c << " " << b << " " << a << std::endl;
+						(*grd)(c, b, a).addParticle((*grd)(i, j, k)(p));
 						(*grd)(i, j, k).removeParticle(p);
 						p--;
 
@@ -336,7 +337,7 @@ inline void compPosition()
 
 inline void compVelocity()
 {
-	cout << "compVelocity()" << std::endl;
+	//cout << "compVelocity()" << std::endl;
 	for (size_t i = 0; i < zsize; i++)
 	{
 		for (size_t j = 0; j < ysize; j++)
@@ -407,6 +408,8 @@ int main(int argc, char** argv)
 	xsize = (size_t)ceil((x_max - x_min) / r_cut);
 	ysize = (size_t)ceil((y_max - y_min) / r_cut);
 	zsize = (size_t)ceil((z_max - z_min) / r_cut);
+
+	cout << xsize << " " << ysize << " " << zsize << std::endl;
 	cout << "vis_space= " << vis_space << std::endl;
 	cout << "t_start= " << t_start << std::endl;
 	cout << "t_end= " << t_end << std::endl;
