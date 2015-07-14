@@ -180,7 +180,8 @@ class Cell {
 			if (i == p)
 			{
 				pnp->next = pn->next;
-				free(pn);
+				pn->next = nullptr;
+				//free(pn);
 				length--;
 				break;
 			}
