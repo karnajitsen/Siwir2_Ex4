@@ -115,7 +115,8 @@ inline void compForceBetCells(size_t x, size_t y, size_t z, size_t nx, size_t ny
 			(*grd)(z, y, x)(p).F[d] += f * ((*grd)(nz, ny, nx)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
 		if (x == 52 && y == 49 && z == 51)
 		{
-			cout << "rij= " << rij2;
+			cout << nx << " " << ny << " " << nz << std::endl;
+			cout << (*grd)(z, y, x)(p).x[0] << " " << (*grd)(z, y, x)(p).x[1] << " " << (*grd)(z, y, x)(p).x[2] << std::endl;
 			cout << (*grd)(z, y, x)(p).F[0] << " " << (*grd)(z, y, x)(p).F[1] << " " << (*grd)(z, y, x)(p).F[2] << std::endl;
 		}
 	}
