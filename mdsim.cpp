@@ -113,6 +113,8 @@ inline void compForceBetCells(size_t x, size_t y, size_t z, size_t nx, size_t ny
 		f = 24.0 * epsilon * s * (1.0 - 2.0 * s) / rij2;
 		for (size_t d = 0; d < DIM; d++)
 			(*grd)(z, y, x)(p).F[d] += f * ((*grd)(nz, ny, nx)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
+			if (z == 52 && y == 49 && x == 51)
+				cout << "rij= " << rij2;
 	}
 }
 
