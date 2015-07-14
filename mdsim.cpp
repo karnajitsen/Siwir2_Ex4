@@ -314,13 +314,15 @@ inline void compPosition()
 		{
 			for (size_t k = 0; k < xsize; k++)
 			{
-				size_t len = (*grd)(i, j, k).getLength();
+				//size_t len = (*grd)(i, j, k).getLength();
 				for (size_t p = 0; p < (*grd)(i, j, k).getLength(); p++)
 				{
 					(*grd)(i, j, k)(p).x[0] = (*grd)(i, j, k)(p).x[0] + delta_t * (*grd)(i, j, k)(p).v[0] + (*grd)(i, j, k)(p).F[0] * delta_t * delta_t * 0.5 / (*grd)(i, j, k)(p).m;
 					(*grd)(i, j, k)(p).x[1] = (*grd)(i, j, k)(p).x[1] + delta_t * (*grd)(i, j, k)(p).v[1] + (*grd)(i, j, k)(p).F[1] * delta_t * delta_t * 0.5 / (*grd)(i, j, k)(p).m;
 					(*grd)(i, j, k)(p).x[2] = (*grd)(i, j, k)(p).x[2] + delta_t * (*grd)(i, j, k)(p).v[2] + (*grd)(i, j, k)(p).F[2] * delta_t * delta_t * 0.5 / (*grd)(i, j, k)(p).m;
 					getCellNumber((*grd)(i, j, k)(p).x[0], (*grd)(i, j, k)(p).x[1], (*grd)(i, j, k)(p).x[2], a, b, c);
+					cout << (*grd)(i, j, k)(p).F[0] << " f " << (*grd)(i, j, k)(p).F[1] << " f " << (*grd)(i, j, k)(p).F[2] << std::endl;
+					cout << (*grd)(i, j, k)(p).v[0] << " v " << (*grd)(i, j, k)(p).v[1] << " v " << (*grd)(i, j, k)(p).v[2] << std::endl;
 					cout << (*grd)(i, j, k)(p).x[0] << " * " << (*grd)(i, j, k)(p).x[1] << " * " << (*grd)(i, j, k)(p).x[2] << std::endl;
 					if (a != k || b != j || c != i)
 					{
