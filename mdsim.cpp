@@ -93,6 +93,12 @@ inline void compForceCenterCell(size_t x, size_t y, size_t z, size_t p)
 			f = 24.0 * epsilon * s * (1.0 - 2.0 * s) / rij2;
 			for (size_t d = 0; d < DIM; d++)
 				(*grd)(z, y, x)(p).F[d] += f * ((*grd)(z, y, x)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
+			if (x == 52 && y == 49 && z == 51)
+			{
+				//cout << (*grd)(nz, ny, nx)(p).x[0] << " " << (*grd)(nz, ny, nx)(p).x[1] << " " << (*grd)(nz, ny, nx)(p).x[2] << std::endl;
+				cout << (*grd)(z, y, x)(p).x[0] << " " << (*grd)(z, y, x)(p).x[1] << " " << (*grd)(z, y, x)(p).x[2] << std::endl;
+				cout << (*grd)(z, y, x)(p).F[0] << " " << (*grd)(z, y, x)(p).F[1] << " " << (*grd)(z, y, x)(p).F[2] << std::endl;
+			}
 		}
 	}
 }
@@ -113,12 +119,7 @@ inline void compForceBetCells(size_t x, size_t y, size_t z, size_t nx, size_t ny
 		f = 24.0 * epsilon * s * (1.0 - 2.0 * s) / rij2;
 		for (size_t d = 0; d < DIM; d++)
 			(*grd)(z, y, x)(p).F[d] += f * ((*grd)(nz, ny, nx)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
-		if (x == 52 && y == 49 && z == 51)
-		{
-			cout << (*grd)(nz, ny, nx)(p).x[0] << " " << (*grd)(nz, ny, nx)(p).x[1] << " " << (*grd)(nz, ny, nx)(p).x[2] << std::endl;
-			cout << (*grd)(z, y, x)(p).x[0] << " " << (*grd)(z, y, x)(p).x[1] << " " << (*grd)(z, y, x)(p).x[2] << std::endl;
-			cout << (*grd)(z, y, x)(p).F[0] << " " << (*grd)(z, y, x)(p).F[1] << " " << (*grd)(z, y, x)(p).F[2] << std::endl;
-		}
+		
 	}
 }
 
