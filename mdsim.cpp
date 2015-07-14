@@ -79,25 +79,28 @@ inline Real compRij2(Particle a, Particle b)
 inline void compForceCenterCell(size_t z, size_t y, size_t x, size_t p)
 {
 	size_t len = (*grd)(z, y, x).getLength();
-	//Particle cp = (*grd)(z, y, x)(p);
+	cout << "compForceCenterCell()" << std::endl;
 	//Particle np;
 	Real f,s;
 	double rij2 = 0.0;
-	for (size_t i = 0; i < len && i!=p; i++)
+	for (size_t i = 0; i < len; i++)
 	{
-		rij2 = compRij2((*grd)(z, y, x)(p), (*grd)(z, y, x)(i));
-		s = sigma * sigma / rij2;
-		s = s * s * s;
-		f = 24.0 * epsilon * s * (1.0 - 2.0 * s) / rij2;
-		for (size_t d = 0; d < DIM ; d++)
-		(*grd)(z, y, x)(i).F[d] += f * ((*grd)(z, y, x)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
+		if (i !=p)
+		{
+			rij2 = compRij2((*grd)(z, y, x)(p), (*grd)(z, y, x)(i));
+			s = sigma * sigma / rij2;
+			s = s * s * s;
+			f = 24.0 * epsilon * s * (1.0 - 2.0 * s) / rij2;
+			for (size_t d = 0; d < DIM; d++)
+				(*grd)(z, y, x)(i).F[d] += f * ((*grd)(z, y, x)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
+		}
 	}
 }
 
 inline void compForceBetCells(size_t z, size_t y, size_t x, size_t nz, size_t ny, size_t nx,size_t p)
 {
 	size_t len = (*grd)(nz,ny, nx).getLength();
-	
+	cout << "compForceBetCells()" << std::endl;
 	Real f, s;
 	double rij2 = 0.0;
 	for (size_t i = 0; i < len; i++)
@@ -273,7 +276,7 @@ inline void compForceNorthCells(size_t z, size_t y, size_t x, size_t p)
 
 inline void compForce()
 {
-	//Particle ** np;
+	cout << "compForce()" << std::endl;
 	for (size_t i = 0; i < zsize; i++)
 	{
 		for (size_t j = 0; j < ysize; j++)
@@ -303,7 +306,7 @@ inline void compForce()
 
 inline void compPosition()
 {
-	
+	cout << "compPosition()" << std::endl;
 	size_t a, b, c;
 	for (size_t i = 0; i < zsize; i++)
 	{
@@ -331,6 +334,7 @@ inline void compPosition()
 
 inline void compVelocity()
 {
+	cout << "compVelocity()" << std::endl;
 	for (size_t i = 0; i < zsize; i++)
 	{
 		for (size_t j = 0; j < ysize; j++)
