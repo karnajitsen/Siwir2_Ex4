@@ -36,9 +36,9 @@ Grid * tgrd = nullptr;
 
 void getCellNumber(Real x, Real y, Real z, size_t& i, size_t& j, size_t& k)
 {
-	i = (size_t)ceil(fmod(x , x_max) / cellx);
-	j = (size_t)ceil(fmod(y, y_max) / celly);
-	k = (size_t)ceil(fmod(z, z_max) / cellz);
+	i = (size_t)ceil(fmod(x , x_max) / cellx)-1;
+	j = (size_t)ceil(fmod(y, y_max) / celly)-1;
+	k = (size_t)ceil(fmod(z, z_max) / cellz)-1;
 }
 void inline init()
 {
