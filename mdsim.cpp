@@ -315,7 +315,7 @@ inline void compPosition()
 			for (size_t k = 0; k < xsize; k++)
 			{
 				size_t len = (*grd)(i, j, k).getLength();
-				for (size_t p = 0; p < len; p++)
+				for (size_t p = 0; p < (*grd)(i, j, k).getLength(); p++)
 				{
 					(*grd)(i, j, k)(p).x[0] = (*grd)(i, j, k)(p).x[0] + delta_t * (*grd)(i, j, k)(p).v[0] + (*grd)(i, j, k)(p).F[0] * delta_t * delta_t * 0.5 / (*grd)(i, j, k)(p).m;
 					(*grd)(i, j, k)(p).x[1] = (*grd)(i, j, k)(p).x[1] + delta_t * (*grd)(i, j, k)(p).v[1] + (*grd)(i, j, k)(p).F[1] * delta_t * delta_t * 0.5 / (*grd)(i, j, k)(p).m;
@@ -326,6 +326,7 @@ inline void compPosition()
 						(*grd)(c, b, a).addParticle((*grd)(i, j, k)(p));
 						(*grd)(i, j, k).removeParticle(p);
 						p--;
+
 					}
 				}
 			}
