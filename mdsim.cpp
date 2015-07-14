@@ -234,12 +234,12 @@ inline void compForceWestCells(size_t z, size_t y, size_t x, size_t p)
 	if ((*grd)(z, y, x).getYBoundary() == 'S')
 		sy = ysize - 1;
 	else
-		sy = y + 1;
+		sy = y - 1;
 
 	if ((*grd)(z, y, x).getYBoundary() == 'N')
 		ny = 0;
 	else
-		ny = y - 1;
+		ny = y + 1;
 
 	compForceBetCells(x, y, z, wx, y, z, p);
 	compForceBetCells(x, y, z, wx, sy, z, p);
