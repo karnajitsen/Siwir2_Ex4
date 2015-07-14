@@ -76,7 +76,7 @@ inline Real compRij2(Particle a, Particle b)
 	return ((a.x[0] - b.x[0]) * (a.x[0] - b.x[0]) + (a.x[1] - b.x[1]) * (a.x[1] - b.x[1]) + (a.x[2] - b.x[2]) * (a.x[2] - b.x[2]));
 }
 
-inline void compForceCenterCell(size_t z, size_t y, size_t x, size_t p)
+inline void compForceCenterCell(size_t x, size_t y, size_t z, size_t p)
 {
 	size_t len = (*grd)(z, y, x).getLength();
 	cout << "compForceCenterCell()" << std::endl;
@@ -97,7 +97,7 @@ inline void compForceCenterCell(size_t z, size_t y, size_t x, size_t p)
 	}
 }
 
-inline void compForceBetCells(size_t z, size_t y, size_t x, size_t nz, size_t ny, size_t nx,size_t p)
+inline void compForceBetCells(size_t x, size_t y, size_t z, size_t nx, size_t ny, size_t nz,size_t p)
 {
 	size_t len = (*grd)(nz,ny, nx).getLength();
 	cout << "compForceBetCells()" << std::endl;
