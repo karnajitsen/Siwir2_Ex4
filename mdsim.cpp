@@ -325,6 +325,7 @@ inline void compPosition()
 					{
 						(*grd)(c, b, a).addParticle((*grd)(i, j, k)(p));
 						(*grd)(i, j, k).removeParticle(p);
+						p--;
 					}
 				}
 			}
