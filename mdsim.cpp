@@ -323,7 +323,7 @@ inline void compPosition()
 					getCellNumber((*grd)(i, j, k)(p).x[0], (*grd)(i, j, k)(p).x[1], (*grd)(i, j, k)(p).x[2], a, b, c);
 					if (a != k || b != j || c != i)
 					{
-						(*grd)(c, b, a).addParticle((*grd)(i, j, k)(p));
+						//(*grd)(c, b, a).addParticle((*grd)(i, j, k)(p));
 						(*grd)(i, j, k).removeParticle(p);
 						p--;
 
