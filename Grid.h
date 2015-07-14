@@ -59,15 +59,17 @@ public:
 
 	inline Cell& operator()(const size_t x, const size_t y, const size_t z)
 	{
-		assert(x < xsize);
+		assert(x < zsize);
 		assert(y < ysize);
+		assert(z < xsize);
 		return data[x*xsize*ysize + y*xsize + z];
 	}
 
 	inline Cell& operator()(const size_t x, const size_t y, const size_t z) const
 	{
-		assert(x < xsize);
+		assert(x < zsize);
 		assert(y < ysize);
+		assert(z < xsize);
 		return data[x*xsize*ysize + y*xsize + z];
 	}
 };
