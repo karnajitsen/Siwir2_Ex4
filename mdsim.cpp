@@ -95,6 +95,7 @@ inline void compForceCenterCell(size_t x, size_t y, size_t z, size_t p)
 				(*grd)(z, y, x)(p).F[d] += f * ((*grd)(z, y, x)(i).x[d] - (*grd)(z, y, x)(p).x[d]);
 			if (x == 52 && y == 49 && z == 51)
 			{
+				cout << rij2 << std::endl;
 				//cout << (*grd)(nz, ny, nx)(p).x[0] << " " << (*grd)(nz, ny, nx)(p).x[1] << " " << (*grd)(nz, ny, nx)(p).x[2] << std::endl;
 				cout << (*grd)(z, y, x)(p).x[0] << " " << (*grd)(z, y, x)(p).x[1] << " " << (*grd)(z, y, x)(p).x[2] << std::endl;
 				cout << (*grd)(z, y, x)(p).F[0] << " " << (*grd)(z, y, x)(p).F[1] << " " << (*grd)(z, y, x)(p).F[2] << std::endl;
