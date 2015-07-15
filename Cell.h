@@ -5,7 +5,7 @@
 #include<memory>
 #include<stdlib.h>
 #define DIM 3
-typedef double Real;
+typedef float Real;
 
 typedef struct Particle{
 	Real m;
