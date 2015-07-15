@@ -85,7 +85,7 @@ inline void compForceCenterCell(size_t x, size_t y, size_t z, size_t p)
 	double rij2 = 0.0;
 	for (size_t i = 0; i < len; i++)
 	{
-		if (i !=p)
+		if (i != p)
 		{
 			rij2 = compRij2((*grd)(z, y, x)(p), (*grd)(z, y, x)(i));
 			s = sigma * sigma / rij2;
@@ -376,12 +376,15 @@ inline void performTimeSteps()
 	compForce();
 	t = t + delta_t;
 	t_end = .00005;
+	int i = 0;
 	while (t <= t_end)
 	{
 		compPosition();
 		compForce();
 		compVelocity();
 		//compThermodynamics();
+		i++;
+		cout << "i==== " << i<< std::endl;
 	}
 }
 
