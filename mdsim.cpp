@@ -10,7 +10,7 @@
 
 
 #define DIM 3
-typedef double Real;
+typedef float Real;
 
 size_t vis_space;
 Real t_start;
